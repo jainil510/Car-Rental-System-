@@ -1,32 +1,49 @@
+# Car Rental System
 
----
+This is a simple command-line car rental system built with Java.
 
-### 🟧 4. Car Rental System
-```markdown
-# 🚗 Car Rental System
+**Author:** Jainil Ulhas Patil
+**GitHub:** [github.com/jainil510](https://github.com/jainil510)
 
-### 🧰 Tech Stack
-Java | OOPs | Collections | Console Application
+## Project Structure
 
-### 📖 Overview
-A console-based Java application to manage car rentals, returns, and billing for small-scale agencies.  
-Demonstrates strong **Object-Oriented Programming** concepts and use of data structures.
+The project is organized into the following packages:
 
-### 🚀 Features
-- Rent and return cars via CLI  
-- Customer and car management modules  
-- Calculate rental bills automatically  
-- Data stored in memory using **Collections**  
+- `com`: The root package.
+- `com.data`: Contains the `DatabaseManager` class for handling data persistence.
+- `com.exceptions`: Contains custom exception classes.
+- `com.logic`: Contains the core business logic of the application in the `CarRentalSystem` class.
+- `com.ui`: Contains the `ConsoleUI` class for handling user interactions.
+- `com.utils`: Contains the `Config` class for storing configuration constants.
 
-### ⚙️ Setup Instructions
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/jainil510/Car-Rental-System-
+## How to Compile and Run
 
-2. Compile and run in any Java IDE or terminal.
+1.  **Compile the code:**
 
-🧠 Learning Outcomes
+    Open a terminal and navigate to the `Car Rental System/src` directory. Then, run the following command:
 
-- Hands-on with OOP concepts like inheritance and abstraction
-- Built from scratch with no external libraries
-- Strengthened Java logic-building and problem-solving skills
+    ```bash
+    javac -d . Main.java com/data/DatabaseManager.java com/utils/Config.java com/logic/CarRentalSystem.java com/exceptions/CarNotAvailableException.java com/exceptions/InvalidInputException.java com/ui/ConsoleUI.java
+    ```
+
+2.  **Run the application:**
+
+    From the `Car Rental System/src` directory, run the following command:
+
+    ```bash
+    java Main
+    ```
+
+## How to Add Initial Data
+
+The application uses CSV files to store data for cars, customers, and rentals. These files are located in the `data` directory, which will be created automatically when you first run the application.
+
+-   `data/cars.csv`: Stores car information in the format: `carId,brand,model,basePricePerDay`
+-   `data/customers.csv`: Stores customer information in the format: `customerId,name,mobileNumber,email`
+-   `data/rentals.csv`: Stores rental information in the format: `rentalId,carId,customerId,rentalDate,returnDate,totalCost`
+
+You can manually add data to these files to populate the system with initial data. For example, to add a car, you could add the following line to the `data/cars.csv` file:
+
+```csv
+car1,Toyota,Camry,50.0
+```
